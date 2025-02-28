@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.recetasdecocina.views.HomeView
+//import com.example.recetasdecocina.views.Albondigas
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,4 +23,5 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     HomeView()
+//    Albondigas()
 }

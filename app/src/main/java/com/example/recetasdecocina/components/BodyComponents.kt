@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun TitleView(name: String){
-    Text(text = name, fontSize = 25.sp, color = Color.Black)
+    Text(text = name, fontSize = 25.sp, color = Color.White)
 }
 
 @Composable
