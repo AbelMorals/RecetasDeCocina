@@ -2,6 +2,7 @@ package com.example.ejemplo1.components
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -18,15 +19,15 @@ fun TitleView(name: String){
 
 @Composable
 fun Spacers(){
-    Spacer(modifier = Modifier.height(10.dp))
+    Spacer(modifier = Modifier.height(32.dp))
 }
 
 @Composable
 fun MainButton(name:String, backcolor:Color, color:Color,onClick:()->Unit){
     Button(onClick = onClick, colors = ButtonDefaults.buttonColors(
         contentColor = color,
-        containerColor = backcolor
-    )){
+        containerColor = backcolor),
+        modifier = Modifier.padding(top = 8.dp)){
         Text(text=name)
     }
 }
