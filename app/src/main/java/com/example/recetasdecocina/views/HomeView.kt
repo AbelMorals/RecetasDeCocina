@@ -27,6 +27,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.ejemplo1.components.MainButton
 import com.example.ejemplo1.components.Spacers
 import com.example.ejemplo1.components.TitleBar
@@ -37,7 +38,7 @@ import com.example.recetasdecocina.R
 @SuppressLint ("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn (ExperimentalMaterial3Api::class)
 @Composable
-fun HomeView(){
+fun HomeView(navController: NavController){
 
     Scaffold(
         topBar={
@@ -49,12 +50,12 @@ fun HomeView(){
             )
         }
     ){
-        ContentView()
+        ContentView(navController)
     }
 }
 
 @Composable
-private fun ContentView()
+private fun ContentView(navController: NavController)
 {
     Column(
         modifier = Modifier
@@ -69,25 +70,29 @@ private fun ContentView()
         Spacers()
         Receta(
             imageRes = R.drawable.albondigas_en_salsa,
-            text = "Albóndigas en salsa"
+            text = "Albóndigas en salsa",
+            navController
         )
         Receta(
             imageRes = R.drawable.presentacion_principal_de_los_burritos_mexicanos_con_carne_picada,
-            text = "Burritos de carne molida"
+            text = "Burritos de carne molida",
+            navController
         )
         Receta(
             imageRes = R.drawable.chilidogs,
-            text = "Hot Dog con Chili"
+            text = "Hot Dog con Chili",
+            navController
         )
         Receta(
             imageRes = R.drawable.hq720,
-            text = "Hamburguesa rellena de queso y tocino"
+            text = "Hamburguesa rellena de queso y tocino",
+            navController
         )
     }
 }
 
 @Composable
-fun Receta(imageRes: Int, text: String) {
+fun Receta(imageRes: Int, text: String, navController: NavController) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -107,7 +112,7 @@ fun Receta(imageRes: Int, text: String) {
             Spacers()
             TitleView(text)
             MainButton("Ir a receta", Color.Red, Color.White) {
-                Log.d("Receta", "Ir a $text")
+                navController.navigate(navController)
             }
         }
     }
