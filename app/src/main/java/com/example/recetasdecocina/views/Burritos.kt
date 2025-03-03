@@ -19,6 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.ejemplo1.components.MainButton
 import com.example.ejemplo1.components.Spacers
 import com.example.ejemplo1.components.SubTitleView
@@ -27,12 +28,12 @@ import com.example.recetasdecocina.R
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun Burritos(){
-    ContentView()
+fun Burritos(navController: NavController){
+    ContentView(navController)
 }
 
 @Composable
-private fun ContentView(){
+private fun ContentView(navController: NavController){
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -53,6 +54,7 @@ private fun ContentView(){
             horizontalArrangement = Arrangement.SpaceEvenly
         ){
             MainButton("Regresar", Color.Red, Color.White) {
+                navController.popBackStack()
             }
         }
     }

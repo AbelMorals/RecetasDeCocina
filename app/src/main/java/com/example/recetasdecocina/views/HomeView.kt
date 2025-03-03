@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
@@ -71,28 +72,32 @@ private fun ContentView(navController: NavController)
         Receta(
             imageRes = R.drawable.albondigas_en_salsa,
             text = "Albóndigas en salsa",
+            texto = "albondigas",
             navController
         )
         Receta(
             imageRes = R.drawable.presentacion_principal_de_los_burritos_mexicanos_con_carne_picada,
             text = "Burritos de carne molida",
+            texto = "burritos",
             navController
         )
         Receta(
             imageRes = R.drawable.chilidogs,
             text = "Hot Dog con Chili",
+            texto = "hotdog",
             navController
         )
         Receta(
             imageRes = R.drawable.hq720,
             text = "Hamburguesa rellena de queso y tocino",
+            texto = "burger",
             navController
         )
     }
 }
 
 @Composable
-fun Receta(imageRes: Int, text: String, navController: NavController) {
+fun Receta(imageRes: Int, text: String, texto: String, navController: NavController) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -112,7 +117,7 @@ fun Receta(imageRes: Int, text: String, navController: NavController) {
             Spacers()
             TitleView(text)
             MainButton("Ir a receta", Color.Red, Color.White) {
-                navController.navigate(navController)
+                navController.navigate(texto)
             }
         }
     }
@@ -127,6 +132,22 @@ fun MostrarImagen(
         .size(128.dp)
         .clip(RoundedCornerShape(10))
         .border(5.dp, Color.Gray, RoundedCornerShape(10))
+) {
+    Image(
+        painter = painterResource(id = imagenRes),
+        contentDescription = descripcion,
+        contentScale = ContentScale.Crop,
+        modifier = modifier
+    )
+}
+
+@Composable
+fun Imagen(
+    imagenRes: Int,
+    descripcion: String,
+    modifier: Modifier = Modifier
+        .fillMaxWidth()
+        .height(270.dp)
 ) {
     Image(
         painter = painterResource(id = imagenRes),

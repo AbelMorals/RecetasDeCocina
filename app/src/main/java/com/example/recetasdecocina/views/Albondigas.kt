@@ -61,18 +61,3 @@ private fun ContentView(navController: NavController){
     }
 }
 
-@Composable
-fun Imagen(
-    imagenRes: Int,
-    descripcion: String,
-    modifier: Modifier = Modifier
-        .fillMaxWidth()
-        .height(270.dp)
-) {
-    Image(
-        painter = painterResource(id = imagenRes),
-        contentDescription = descripcion,
-        contentScale = ContentScale.Crop,
-        modifier = modifier
-    )
-}

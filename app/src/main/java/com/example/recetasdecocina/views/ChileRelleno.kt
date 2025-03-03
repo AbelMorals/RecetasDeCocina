@@ -7,8 +7,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -28,7 +28,7 @@ import com.example.recetasdecocina.R
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun Burger(navController: NavController){
+fun ChileRelleno(navController: NavController){
     ContentView(navController)
 }
 
@@ -37,12 +37,13 @@ private fun ContentView(navController: NavController){
     Column(
         modifier = Modifier
             .fillMaxSize()
+            //.background(Color.Black)
             .padding(start = 16.dp, end = 16.dp)
             .verticalScroll(rememberScrollState())
     ) {
-        Imagen(R.drawable.hq720, "Hamburguesa rellena de queso y tocino")
+        Imagen(R.drawable.stuffed_chileschiles_rellenos, "chilerelleno")
         Spacers()
-        TitleView("Hamburguesa rellena de queso y tocino")
+        TitleView("Albondigas en salsa")
         Spacers()
         SubTitleView("Utensilios a usar")
 
