@@ -59,7 +59,7 @@ private fun ContentView()
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Black)
+           // .background(Color.Black)
             .padding(top = 16.dp)
             .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(16.dp),

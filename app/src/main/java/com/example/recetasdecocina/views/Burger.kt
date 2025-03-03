@@ -7,8 +7,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -27,7 +27,7 @@ import com.example.recetasdecocina.R
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun Albondigas(){
+fun Burger(){
     ContentView()
 }
 
@@ -36,13 +36,12 @@ private fun ContentView(){
     Column(
         modifier = Modifier
             .fillMaxSize()
-            //.background(Color.Black)
             .padding(start = 16.dp, end = 16.dp)
             .verticalScroll(rememberScrollState())
     ) {
-        Imagen(R.drawable.albondigas_en_salsa, "albondigas")
+        Imagen(R.drawable.hq720, "Hamburguesa rellena de queso y tocino")
         Spacers()
-        TitleView("Albondigas en salsa")
+        TitleView("Hamburguesa rellena de queso y tocino")
         Spacers()
         SubTitleView("Utensilios a usar")
 
@@ -57,20 +56,4 @@ private fun ContentView(){
             }
         }
     }
-}
-
-@Composable
-fun Imagen(
-    imagenRes: Int,
-    descripcion: String,
-    modifier: Modifier = Modifier
-        .fillMaxWidth()
-        .height(270.dp)
-) {
-    Image(
-        painter = painterResource(id = imagenRes),
-        contentDescription = descripcion,
-        contentScale = ContentScale.Crop,
-        modifier = modifier
-    )
 }
