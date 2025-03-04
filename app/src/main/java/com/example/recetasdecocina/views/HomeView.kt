@@ -1,9 +1,7 @@
 package com.example.recetasdecocina.views
 
 import android.annotation.SuppressLint
-import android.util.Log
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -61,7 +59,7 @@ private fun ContentView(navController: NavController)
     Column(
         modifier = Modifier
             .fillMaxSize()
-           // .background(Color.Black)
+            // .background(Color.Black)
             .padding(top = 16.dp)
             .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(16.dp),
@@ -93,6 +91,12 @@ private fun ContentView(navController: NavController)
             texto = "burger",
             navController
         )
+        Receta(
+            imageRes = R.drawable.stuffed_chileschiles_rellenos,
+            text = "Chiles Rellenos",
+            texto = "chilerelleno",
+            navController
+        )
     }
 }
 
@@ -105,7 +109,7 @@ fun Receta(imageRes: Int, text: String, texto: String, navController: NavControl
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceEvenly
     ) {
-        MostrarImagen(imageRes, text)
+        MostrarImagenRecortado(imageRes, text)
 
         Column(
             modifier = Modifier
@@ -124,7 +128,7 @@ fun Receta(imageRes: Int, text: String, texto: String, navController: NavControl
 }
 
 @Composable
-fun MostrarImagen(
+fun MostrarImagenRecortado(
     imagenRes: Int,
     descripcion: String,
     modifier: Modifier = Modifier
@@ -142,12 +146,28 @@ fun MostrarImagen(
 }
 
 @Composable
-fun Imagen(
+fun ImagenCuadrada(
     imagenRes: Int,
     descripcion: String,
     modifier: Modifier = Modifier
         .fillMaxWidth()
         .height(270.dp)
+) {
+    Image(
+        painter = painterResource(id = imagenRes),
+        contentDescription = descripcion,
+        contentScale = ContentScale.Crop,
+        modifier = modifier
+    )
+}
+
+@Composable
+fun ImagenChiquita(
+    imagenRes: Int,
+    descripcion: String,
+    modifier: Modifier = Modifier
+        .fillMaxWidth()
+        .height(50.dp)
 ) {
     Image(
         painter = painterResource(id = imagenRes),

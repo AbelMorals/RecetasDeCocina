@@ -36,12 +36,11 @@ private fun ContentView(navController: NavController){
             .padding(start = 16.dp, end = 16.dp)
             .verticalScroll(rememberScrollState())
     ) {
-        Imagen(R.drawable.albondigas_en_salsa, "albondigas")
+        ImagenCuadrada(R.drawable.albondigas_en_salsa, "albondigas")
         Spacers()
         TitleView("Albondigas en salsa")
         Spacers()
-        SubTitleView("Utensilios a usar")
-
+        SubTitleView("Utensilios a usar:")
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -49,6 +48,8 @@ private fun ContentView(navController: NavController){
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceEvenly
         ){
+            Spacers()
+            ImagenChiquita(R.drawable.sarten,"sarten")
             MainButton("Regresar", Color.Red, Color.White) {
                 navController.popBackStack()
             }
