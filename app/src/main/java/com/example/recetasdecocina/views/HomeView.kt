@@ -166,8 +166,7 @@ fun ImagenChiquita(
     imagenRes: Int,
     descripcion: String,
     modifier: Modifier = Modifier
-        .fillMaxWidth()
-        .height(50.dp)
+        .size(70.dp)
 ) {
     Image(
         painter = painterResource(id = imagenRes),

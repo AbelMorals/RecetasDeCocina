@@ -19,7 +19,7 @@ fun NavManager(){
             HomeView(navController)
         }
 
-        composable("albondigas"){
+        composable("albondiígas"){
             Albondigas(navController)
         }
 

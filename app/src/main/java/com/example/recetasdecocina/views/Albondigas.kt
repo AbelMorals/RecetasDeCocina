@@ -44,15 +44,30 @@ private fun ContentView(navController: NavController){
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(10.dp),
+                .padding(15.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceEvenly
         ){
-            Spacers()
             ImagenChiquita(R.drawable.sarten,"sarten")
-            MainButton("Regresar", Color.Red, Color.White) {
-                navController.popBackStack()
-            }
+            SubTitleView("Sartén")
+            ImagenChiquita(R.drawable.licuadora,"licuadora")
+            SubTitleView("Licuadora")
+        }
+        TitleView("Ingredientes")
+        SubTitleView("2 Tazas de Puré de tomate")
+        SubTitleView("1 Chile chipotle")
+        SubTitleView("3 Tazas de Agua")
+        SubTitleView("2 Cubos de Concentrado de Tomate con Pollo CONSOMATE®")
+        SubTitleView("1 Cucharada de Aceite de maíz")
+        SubTitleView("800 Gramos Carne de res molida")
+        SubTitleView("100 Gramos de Tocino picado y frito")
+        SubTitleView("1 Huevo")
+        SubTitleView(" 2 Cucharadas de Jugo MAGGI®")
+        SubTitleView(" 1 Cucharada de Salsa Tipo Inglesa CROSSE & BLACKWELL®")
+        SubTitleView(" 2 Cucharadas de Cebolla finamente picada")
+        TitleView("¡A cocinar!")
+        MainButton("Regresar", Color.Red, Color.White) {
+            navController.popBackStack()
         }
     }
 }
