@@ -75,8 +75,11 @@ private fun ContentView(navController: NavController){
         SubTitleView("2.Para las albóndigas, mezcla la carne con el tocino, la cebolla, el huevo, el Jugo MAGGI® y la Salsa Tipo Inglesa CROSSE & BLACKWELL®. Forma las albóndigas, colócalas en la salsa, tapa y cocina por 20 minutos a fuego medio o hasta que estén cocidas.")
         Text(text = "Ofrece", fontSize = 30.sp, color = Color.Black)
         SubTitleView("3.Sirve las albóndigas en un plato y ofrece.")
-        MainButton("Regresar", Color.Red, Color.White) {
-            navController.popBackStack()
+        MainButton("Regresar a recetas", Color.Red, Color.White) {
+            navController.navigate("Home")
+        }
+        MainButton("Ir a la siguiente receta", Color.Red, Color.White) {
+            navController.navigate("burritos")
         }
     }
 }

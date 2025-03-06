@@ -49,7 +49,10 @@ private fun ContentView(navController: NavController){
             horizontalArrangement = Arrangement.SpaceEvenly
         ){
             MainButton("Regresar", Color.Red, Color.White) {
-                navController.popBackStack()
+                navController.navigate("Home")
+            }
+            MainButton("Ir a la siguiente receta", Color.Red, Color.White) {
+                navController.navigate("hotdog")
             }
         }
     }
