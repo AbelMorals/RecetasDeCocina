@@ -30,12 +30,12 @@ fun Burger(navController: NavController){
 @Composable
 private fun ContentView(navController: NavController){
     Column(
+        verticalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier
             .fillMaxSize()
-            .padding(start = 16.dp, end = 16.dp)
             .verticalScroll(rememberScrollState())
     ) {
-        ImagenCuadrada(R.drawable.hq720, "Hamburguesa rellena de queso y tocino")
+        ImagenCuadrada(R.drawable.burger, "Hamburguesa rellena de queso y tocino")
         Spacers()
         TitleView("Hamburguesa rellena de queso y tocino")
         Spacers()
@@ -48,7 +48,7 @@ private fun ContentView(navController: NavController){
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceEvenly
         ){
-            MainButton("Regresar", Color.Red, Color.White) {
+            MainButton("Regresar a recetas", Color.Red, Color.White) {
                 navController.navigate("Home")
             }
             MainButton("Ir a la siguiente receta", Color.Red, Color.White) {

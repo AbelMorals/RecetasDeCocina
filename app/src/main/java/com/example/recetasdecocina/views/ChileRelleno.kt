@@ -30,10 +30,9 @@ fun ChileRelleno(navController: NavController){
 @Composable
 private fun ContentView(navController: NavController){
     Column(
+        verticalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier
             .fillMaxSize()
-            //.background(Color.Black)
-            .padding(start = 16.dp, end = 16.dp)
             .verticalScroll(rememberScrollState())
     ) {
         ImagenCuadrada(R.drawable.stuffed_chileschiles_rellenos, "chilerelleno")
@@ -49,10 +48,10 @@ private fun ContentView(navController: NavController){
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceEvenly
         ){
-            MainButton("Regresar", Color.Red, Color.White) {
+            MainButton("Regresar a recetas", Color.Red, Color.White) {
                 navController.navigate("Home")
             }
-            MainButton("Ir a la siguiente receta", Color.Red, Color.White) {
+            MainButton("Siguiente receta", Color.Red, Color.White) {
                 navController.navigate("albondigas")
             }
         }

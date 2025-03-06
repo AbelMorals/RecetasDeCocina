@@ -35,15 +35,14 @@ private fun ContentView(navController: NavController){
         verticalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier
             .fillMaxSize()
-            //.background(Color.Black)
-            .padding(start = 16.dp, end = 16.dp)
+            //.background(Color.Black)}
             .verticalScroll(rememberScrollState())
     ) {
         ImagenCuadrada(R.drawable.albondigas_en_salsa, "albondigas")
         Spacers()
         TitleView("Albondigas en salsa")
         Spacers()
-        SubTitleView("Utensilios a usar:")
+        SubTitleView("  Utensilios a usar:")
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -57,29 +56,37 @@ private fun ContentView(navController: NavController){
             SubTitleView("Licuadora")
         }
         TitleView("Ingredientes")
-        SubTitleView("2 Tazas de Puré de tomate")
-        SubTitleView("1 Chile chipotle")
-        SubTitleView("3 Tazas de Agua")
-        SubTitleView("2 Cubos de Concentrado de Tomate con Pollo CONSOMATE®")
-        SubTitleView("1 Cucharada de Aceite de maíz")
-        SubTitleView("800 Gramos Carne de res molida")
-        SubTitleView("100 Gramos de Tocino picado y frito")
-        SubTitleView("1 Huevo")
-        SubTitleView(" 2 Cucharadas de Jugo MAGGI®")
-        SubTitleView(" 1 Cucharada de Salsa Tipo Inglesa CROSSE & BLACKWELL®")
-        SubTitleView(" 2 Cucharadas de Cebolla finamente picada")
+        SubTitleView("  2 Tazas de Puré de tomate")
+        SubTitleView("  1 Chile chipotle")
+        SubTitleView("  3 Tazas de Agua")
+        SubTitleView("  2 Cubos de Concentrado de Tomate con Pollo CONSOMATE®")
+        SubTitleView("  1 Cucharada de Aceite de maíz")
+        SubTitleView("  800 Gramos Carne de res molida")
+        SubTitleView("  100 Gramos de Tocino picado y frito")
+        SubTitleView("  1 Huevo")
+        SubTitleView("  2 Cucharadas de Jugo MAGGI®")
+        SubTitleView("  1 Cucharada de Salsa Tipo Inglesa CROSSE & BLACKWELL®")
+        SubTitleView("  2 Cucharadas de Cebolla finamente picada")
         TitleView("¡A cocinar!")
-        Text(text = "Licúa", fontSize = 30.sp, color = Color.Black)
-        SubTitleView("1.Para la salsa, licúa el puré de tomate, el chile, el agua y el Concentrado de Tomate con Pollo CONSOMATE®. Calienta el aceite en una olla y cocina la salsa a fuego medio por 10 minutos.")
-        Text(text = "Coce", fontSize = 30.sp, color = Color.Black)
-        SubTitleView("2.Para las albóndigas, mezcla la carne con el tocino, la cebolla, el huevo, el Jugo MAGGI® y la Salsa Tipo Inglesa CROSSE & BLACKWELL®. Forma las albóndigas, colócalas en la salsa, tapa y cocina por 20 minutos a fuego medio o hasta que estén cocidas.")
-        Text(text = "Ofrece", fontSize = 30.sp, color = Color.Black)
-        SubTitleView("3.Sirve las albóndigas en un plato y ofrece.")
-        MainButton("Regresar a recetas", Color.Red, Color.White) {
-            navController.navigate("Home")
-        }
-        MainButton("Ir a la siguiente receta", Color.Red, Color.White) {
-            navController.navigate("burritos")
+        Text(text = "  Licúa", fontSize = 30.sp, color = Color.Black)
+        SubTitleView("  1.Para la salsa, licúa el puré de tomate, el chile, el agua y el Concentrado de Tomate con Pollo CONSOMATE®. Calienta el aceite en una olla y cocina la salsa a fuego medio por 10 minutos.")
+        Text(text = "  Coce", fontSize = 30.sp, color = Color.Black)
+        SubTitleView("  2.Para las albóndigas, mezcla la carne con el tocino, la cebolla, el huevo, el Jugo MAGGI® y la Salsa Tipo Inglesa CROSSE & BLACKWELL®. Forma las albóndigas, colócalas en la salsa, tapa y cocina por 20 minutos a fuego medio o hasta que estén cocidas.")
+        Text(text = "  Ofrece", fontSize = 30.sp, color = Color.Black)
+        SubTitleView("  3.Sirve las albóndigas en un plato y ofrece.")
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(15.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            MainButton("Regresar a recetas", Color.Red, Color.White) {
+                navController.navigate("Home")
+            }
+            MainButton("Siguiente receta", Color.Red, Color.White) {
+                navController.navigate("burritos")
+            }
         }
     }
 }

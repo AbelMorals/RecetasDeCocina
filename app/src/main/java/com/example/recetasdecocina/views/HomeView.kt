@@ -90,7 +90,7 @@ private fun ContentView(navController: NavController)
             navController
         )
         Receta(
-            imageRes = R.drawable.hq720,
+            imageRes = R.drawable.burger,
             text = "Hamburguesa rellena de queso y tocino",
             texto = "burger",
             navController
