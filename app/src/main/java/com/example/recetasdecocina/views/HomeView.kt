@@ -1,6 +1,7 @@
 package com.example.recetasdecocina.views
 
 import android.annotation.SuppressLint
+import android.view.View
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -19,11 +20,13 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -49,6 +52,7 @@ fun HomeView(navController: NavController){
             )
         }
     ){
+        HideSystemUI()
         ContentView(navController)
     }
 }
@@ -174,4 +178,15 @@ fun ImagenChiquita(
         contentScale = ContentScale.Crop,
         modifier = modifier
     )
+}
+
+@Composable
+fun HideSystemUI() {
+    val view = LocalView.current
+    LaunchedEffect(Unit) {
+        view.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                )
+    }
 }

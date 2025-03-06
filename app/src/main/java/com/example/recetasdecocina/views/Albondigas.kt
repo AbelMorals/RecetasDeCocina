@@ -9,11 +9,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.ejemplo1.components.MainButton
 import com.example.ejemplo1.components.Spacers
@@ -30,6 +32,7 @@ fun Albondigas(navController: NavController){
 @Composable
 private fun ContentView(navController: NavController){
     Column(
+        verticalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier
             .fillMaxSize()
             //.background(Color.Black)
@@ -66,6 +69,12 @@ private fun ContentView(navController: NavController){
         SubTitleView(" 1 Cucharada de Salsa Tipo Inglesa CROSSE & BLACKWELL®")
         SubTitleView(" 2 Cucharadas de Cebolla finamente picada")
         TitleView("¡A cocinar!")
+        Text(text = "Licúa", fontSize = 30.sp, color = Color.Black)
+        SubTitleView("1.Para la salsa, licúa el puré de tomate, el chile, el agua y el Concentrado de Tomate con Pollo CONSOMATE®. Calienta el aceite en una olla y cocina la salsa a fuego medio por 10 minutos.")
+        Text(text = "Coce", fontSize = 30.sp, color = Color.Black)
+        SubTitleView("2.Para las albóndigas, mezcla la carne con el tocino, la cebolla, el huevo, el Jugo MAGGI® y la Salsa Tipo Inglesa CROSSE & BLACKWELL®. Forma las albóndigas, colócalas en la salsa, tapa y cocina por 20 minutos a fuego medio o hasta que estén cocidas.")
+        Text(text = "Ofrece", fontSize = 30.sp, color = Color.Black)
+        SubTitleView("3.Sirve las albóndigas en un plato y ofrece.")
         MainButton("Regresar", Color.Red, Color.White) {
             navController.popBackStack()
         }
