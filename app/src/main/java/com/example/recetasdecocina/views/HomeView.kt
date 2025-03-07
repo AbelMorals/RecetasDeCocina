@@ -3,8 +3,10 @@ package com.example.recetasdecocina.views
 import android.annotation.SuppressLint
 import android.view.View
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -24,6 +26,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalView
@@ -41,19 +44,26 @@ import com.example.recetasdecocina.R
 @OptIn (ExperimentalMaterial3Api::class)
 @Composable
 fun HomeView(navController: NavController){
+        Image(
+            painter = painterResource(id = R.drawable.madera), // Tu imagen en res/drawable
+            contentDescription = "madera",
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.fillMaxSize()
+        )
 
-    Scaffold(
-        topBar={
-            CenterAlignedTopAppBar(
-                title={TitleBar("Recetas de cocina")},
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = Color.Red
+        Scaffold(
+            topBar = {
+                CenterAlignedTopAppBar(
+                    title = { TitleBar("Recetas Nestle") },
+                    colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                        containerColor = Color(0xFF8B0000)
+                    )
                 )
-            )
-        }
-    ){
-        HideSystemUI()
-        ContentView(navController)
+            },
+            containerColor = Color.Transparent
+        ) {
+            HideSystemUI()
+            ContentView(navController)
     }
 }
 
@@ -64,13 +74,14 @@ private fun ContentView(navController: NavController)
         modifier = Modifier
             .fillMaxSize()
             // .background(Color.Black)
-            .padding(top = 16.dp)
+            .padding(top = 60.dp)
             .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     )
     {
         Spacers()
+        TitleView("¿Qué vas a cocinar hoy?")
         Receta(
             imageRes = R.drawable.albondigas_en_salsa,
             text = "Albóndigas en salsa",
@@ -124,7 +135,7 @@ fun Receta(imageRes: Int, text: String, texto: String, navController: NavControl
         ) {
             Spacers()
             TitleView(text)
-            MainButton("Ir a receta", Color.Red, Color.White) {
+            MainButton("Ir a receta", Color(0xFF8B0000), Color.White) {
                 navController.navigate(texto)
             }
         }
@@ -139,7 +150,7 @@ fun MostrarImagenRecortado(
         .padding(top = 16.dp)
         .size(128.dp)
         .clip(RoundedCornerShape(10))
-        .border(5.dp, Color.Gray, RoundedCornerShape(10))
+        .border(5.dp, Color(0xFF8B0000), RoundedCornerShape(10))
 ) {
     Image(
         painter = painterResource(id = imagenRes),
@@ -171,6 +182,8 @@ fun ImagenChiquita(
     descripcion: String,
     modifier: Modifier = Modifier
         .size(70.dp)
+        .clip(RoundedCornerShape(10))
+        .border(3.dp, Color(0xFF8B0000), RoundedCornerShape(10))
 ) {
     Image(
         painter = painterResource(id = imagenRes),

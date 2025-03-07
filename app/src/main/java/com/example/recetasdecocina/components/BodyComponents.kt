@@ -18,14 +18,14 @@ import androidx.compose.ui.unit.sp
 fun TitleView(name: String){
     Text(text = name,
         fontSize = 25.sp,
-        color = Color.Black,
+        color = Color.White,
         modifier = Modifier.fillMaxWidth(),
         textAlign = TextAlign.Center)
 }
 
 @Composable
 fun SubTitleView(name: String){
-    Text(text = name, fontSize = 18.sp, color = Color.Black)
+    Text(text = name, fontSize = 18.sp, color = Color.White)
 }
 
 @Composable
@@ -35,6 +35,16 @@ fun Spacers(){
 
 @Composable
 fun MainButton(name:String, backcolor:Color, color:Color,onClick:()->Unit){
+    Button(onClick = onClick, colors = ButtonDefaults.buttonColors(
+        contentColor = color,
+        containerColor = backcolor),
+        modifier = Modifier.padding(top = 8.dp)){
+        Text(text=name)
+    }
+}
+
+@Composable
+fun Navegacion(name:String, backcolor:Color, color:Color,onClick:()->Unit){
     Button(onClick = onClick, colors = ButtonDefaults.buttonColors(
         contentColor = color,
         containerColor = backcolor),
